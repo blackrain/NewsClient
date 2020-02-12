@@ -10,9 +10,7 @@
 		AE0D20A523F42FB50071B697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20A423F42FB50071B697 /* AppDelegate.swift */; };
 		AE0D20A723F42FB50071B697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20A623F42FB50071B697 /* SceneDelegate.swift */; };
 		AE0D20A923F42FB50071B697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20A823F42FB50071B697 /* ViewController.swift */; };
-		AE0D20AC23F42FB50071B697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D20AA23F42FB50071B697 /* Main.storyboard */; };
 		AE0D20AE23F42FB70071B697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0D20AD23F42FB70071B697 /* Assets.xcassets */; };
-		AE0D20B123F42FB70071B697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D20AF23F42FB70071B697 /* LaunchScreen.storyboard */; };
 		AE0D20BC23F42FB80071B697 /* NewsClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20BB23F42FB80071B697 /* NewsClientTests.swift */; };
 		AE0D20C723F42FB80071B697 /* NewsClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20C623F42FB80071B697 /* NewsClientUITests.swift */; };
 /* End PBXBuildFile section */
@@ -39,9 +37,7 @@
 		AE0D20A423F42FB50071B697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE0D20A623F42FB50071B697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AE0D20A823F42FB50071B697 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AE0D20AB23F42FB50071B697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE0D20AD23F42FB70071B697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AE0D20B023F42FB70071B697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE0D20B223F42FB70071B697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE0D20B723F42FB80071B697 /* NewsClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0D20BB23F42FB80071B697 /* NewsClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsClientTests.swift; sourceTree = "<group>"; };
@@ -80,6 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				AE0D20A323F42FB50071B697 /* NewsClient */,
+				AE0D20B223F42FB70071B697 /* Info.plist */,
+				AE0D20A423F42FB50071B697 /* AppDelegate.swift */,
+				AE0D20A623F42FB50071B697 /* SceneDelegate.swift */,
+				AE0D20A823F42FB50071B697 /* ViewController.swift */,
 				AE0D20BA23F42FB80071B697 /* NewsClientTests */,
 				AE0D20C523F42FB80071B697 /* NewsClientUITests */,
 				AE0D20A223F42FB50071B697 /* Products */,
@@ -99,13 +99,11 @@
 		AE0D20A323F42FB50071B697 /* NewsClient */ = {
 			isa = PBXGroup;
 			children = (
-				AE0D20A423F42FB50071B697 /* AppDelegate.swift */,
-				AE0D20A623F42FB50071B697 /* SceneDelegate.swift */,
-				AE0D20A823F42FB50071B697 /* ViewController.swift */,
-				AE0D20AA23F42FB50071B697 /* Main.storyboard */,
-				AE0D20AD23F42FB70071B697 /* Assets.xcassets */,
-				AE0D20AF23F42FB70071B697 /* LaunchScreen.storyboard */,
-				AE0D20B223F42FB70071B697 /* Info.plist */,
+				AE0D20D523F431AF0071B697 /* Common */,
+				AE0D20D723F431BC0071B697 /* Model */,
+				AE0D20D623F431B60071B697 /* Resources */,
+				AE0D20D423F431A70071B697 /* Scenes */,
+				AE0D20D823F434F50071B697 /* Services */,
 			);
 			path = NewsClient;
 			sourceTree = "<group>";
@@ -126,6 +124,42 @@
 				AE0D20C823F42FB80071B697 /* Info.plist */,
 			);
 			path = NewsClientUITests;
+			sourceTree = "<group>";
+		};
+		AE0D20D423F431A70071B697 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AE0D20D523F431AF0071B697 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AE0D20D623F431B60071B697 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE0D20AD23F42FB70071B697 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AE0D20D723F431BC0071B697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE0D20D823F434F50071B697 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE0D20B123F42FB70071B697 /* LaunchScreen.storyboard in Resources */,
 				AE0D20AE23F42FB70071B697 /* Assets.xcassets in Resources */,
-				AE0D20AC23F42FB50071B697 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +327,6 @@
 			targetProxy = AE0D20C323F42FB80071B697 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AE0D20AA23F42FB50071B697 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE0D20AB23F42FB50071B697 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AE0D20AF23F42FB70071B697 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE0D20B023F42FB70071B697 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AE0D20C923F42FB80071B697 /* Debug */ = {
