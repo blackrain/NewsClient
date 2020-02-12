@@ -11,6 +11,7 @@ import UIKit
 protocol FeedDisplayLogic: class {
 
     func display(items: FeedViewModel)
+    func displayError(_ error: Error)
 }
 
 final class FeedViewController: UIViewController, Routable {
@@ -41,6 +42,8 @@ final class FeedViewController: UIViewController, Routable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "News feed"
+
         tableViewDataSource.registerCell(in: tableView)
         tableView.dataSource = tableViewDataSource
 
@@ -69,5 +72,16 @@ extension FeedViewController: FeedDisplayLogic {
         tableViewDataSource.items = items.items
         tableView.reloadData()
         tableView.refreshControl?.endRefreshing()
+    }
+
+    func displayError(_ error: Error) {
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+
+        let dismissAction = UIAlertAction(title: "OK", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(dismissAction)
+
+        present(alertController, animated: true, completion: nil)
     }
 }

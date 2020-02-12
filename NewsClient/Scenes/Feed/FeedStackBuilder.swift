@@ -11,7 +11,7 @@ import UIKit
 struct FeedContext {
 
     let commonContext: CommonContext
-
+    
     init(commonContext: CommonContext) {
         self.commonContext = commonContext
     }
@@ -23,7 +23,7 @@ final class FeedStackBuilder {
 
     public static func build(_ context: FeedContext) -> FeedViewController {
         let presenter = FeedPresenter()
-        let interactor = FeedInteractor(presenter)
+        let interactor = FeedInteractor(presenter, api: context.commonContext.api)
         let router = FeedRouter(context.commonContext)
         let viewController = FeedViewController(interactor, router: router)
         presenter.viewController = viewController

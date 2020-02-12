@@ -13,5 +13,7 @@ final class FeedCellConfigurator: TableViewCellConfiguring {
     typealias ViewModel = FeedViewModel.FeedItem
     typealias Cell = FeedCell
 
-    func setup(cell: FeedCell, with viewModel: FeedViewModel.FeedItem) {}
+    func setup(cell: FeedCell, with viewModel: FeedViewModel.FeedItem) {
+        cell.update(with: viewModel)
+    }
 }

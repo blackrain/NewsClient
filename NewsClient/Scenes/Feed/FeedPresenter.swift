@@ -10,7 +10,8 @@ import UIKit
 
 protocol FeedPresentationLogic {
 
-    func present(items: [Any])
+    func present(items: [NewsDTO])
+    func presentError(_ error: Error)
 }
 
 final class FeedPresenter {
@@ -20,10 +21,18 @@ final class FeedPresenter {
 
 extension FeedPresenter: FeedPresentationLogic {
 
-    func present(items: [Any]) {
-        let items = items.map { _ in
-            return FeedViewModel.FeedItem()
+    func present(items: [NewsDTO]) {
+        let items = items.map { item in
+            return FeedViewModel.FeedItem(title: item.title, author: item.author)
         }
-        viewController?.display(items: FeedViewModel(items: items))
+        DispatchQueue.main.async {
+            self.viewController?.display(items: FeedViewModel(items: items))
+        }
+    }
+
+    func presentError(_ error: Error) {
+        DispatchQueue.main.async {
+            self.viewController?.displayError(error)
+        }
     }
 }

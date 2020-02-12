@@ -16,15 +16,22 @@ protocol FeedBusinessLogic {
 final class FeedInteractor {
 
     private let presenter: FeedPresentationLogic
+    private let api: Api
 
-    init(_ presenter: FeedPresentationLogic) {
+    init(_ presenter: FeedPresentationLogic, api: Api) {
         self.presenter = presenter
+        self.api = api
     }
 }
 
 extension FeedInteractor: FeedBusinessLogic {
 
     func fetchFeedItems() {
-        presenter.present(items: [])
+        api.fetchNews(onComplete: { (items) in
+            self.presenter.present(items: items)
+        }) { (error) in
+            self.presenter.presentError(error)
+        }
+
     }
 }

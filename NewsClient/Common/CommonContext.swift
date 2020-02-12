@@ -8,6 +8,10 @@
 
 import Foundation
 
-protocol CommonContext {}
+protocol CommonContext {
+    var api: Api { get }
+}
 
-struct DefaultContext: CommonContext {}
+struct DefaultContext: CommonContext {
+    var api: Api = NewsApi()
+}

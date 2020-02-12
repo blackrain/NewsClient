@@ -10,7 +10,10 @@ import Foundation
 
 struct FeedViewModel {
 
-    struct FeedItem {}
+    struct FeedItem {
+        let title: String
+        let author: String
+    }
 
     let items: [FeedItem]
 }
