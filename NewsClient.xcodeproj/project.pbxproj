@@ -25,6 +25,8 @@
 		AE0D20ED23F4482B0071B697 /* CommonContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20EC23F4482B0071B697 /* CommonContext.swift */; };
 		AE0D20EF23F448570071B697 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20EE23F448570071B697 /* Routing.swift */; };
 		AE0D20F123F448A30071B697 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D20F023F448A30071B697 /* TableViewDataSource.swift */; };
+		AEA83ACE23F469AD00F04F13 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA83ACD23F469AD00F04F13 /* Api.swift */; };
+		AEA83AD023F484C000F04F13 /* NewsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA83ACF23F484C000F04F13 /* NewsDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		AE0D20EC23F4482B0071B697 /* CommonContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonContext.swift; sourceTree = "<group>"; };
 		AE0D20EE23F448570071B697 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		AE0D20F023F448A30071B697 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		AEA83ACD23F469AD00F04F13 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AEA83ACF23F484C000F04F13 /* NewsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		AE0D20D723F431BC0071B697 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AEA83ACF23F484C000F04F13 /* NewsDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 		AE0D20D823F434F50071B697 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AEA83ACD23F469AD00F04F13 /* Api.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,12 +349,14 @@
 				AE0D20E223F4357A0071B697 /* FeedCellConfigurator.swift in Sources */,
 				AE0D20F123F448A30071B697 /* TableViewDataSource.swift in Sources */,
 				AE0D20A923F42FB50071B697 /* ViewController.swift in Sources */,
+				AEA83AD023F484C000F04F13 /* NewsDTO.swift in Sources */,
 				AE0D20A523F42FB50071B697 /* AppDelegate.swift in Sources */,
 				AE0D20E923F4357A0071B697 /* FeedView.swift in Sources */,
 				AE0D20A723F42FB50071B697 /* SceneDelegate.swift in Sources */,
 				AE0D20E623F4357A0071B697 /* FeedInteractor.swift in Sources */,
 				AE0D20ED23F4482B0071B697 /* CommonContext.swift in Sources */,
 				AE0D20E523F4357A0071B697 /* FeedViewController.swift in Sources */,
+				AEA83ACE23F469AD00F04F13 /* Api.swift in Sources */,
 				AE0D20E723F4357A0071B697 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
