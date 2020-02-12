@@ -17,7 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        window?.rootViewController = ViewController()
+        let context = DefaultContext()
+        let feedViewController = FeedStackBuilder.build(FeedContext(commonContext: context))
+
+        window?.rootViewController = UINavigationController(rootViewController: feedViewController)
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
     }
