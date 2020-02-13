@@ -22,6 +22,7 @@ final class FeedDetailsView: UIView {
 
     private func setupUI() {
         textView = UITextView(frame: .zero)
+        textView.accessibilityIdentifier = "News content"
         addSubview(textView)
         textView.translatesAutoresizingMaskIntoConstraints = false
 

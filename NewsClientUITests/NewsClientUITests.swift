@@ -16,9 +16,13 @@ class NewsClientUITests: XCTestCase {
 
     override func tearDown() {}
 
-    func testExample() {
+    func testDisplayingNews() {
         let app = XCUIApplication()
         app.launch()
+
+        app.tables["Feed Table View"].cells.element(boundBy: 0).tap()
+
+        XCTAssertFalse((app.textViews["News content"].value as? String)?.isEmpty ?? true)
     }
 
     func testLaunchPerformance() {
