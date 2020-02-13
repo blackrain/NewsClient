@@ -46,6 +46,7 @@ final class FeedViewController: UIViewController, Routable {
 
         tableViewDataSource.registerCell(in: tableView)
         tableView.dataSource = tableViewDataSource
+        tableView.delegate = self
 
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -83,5 +84,12 @@ extension FeedViewController: FeedDisplayLogic {
         alertController.addAction(dismissAction)
 
         present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension FeedViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router.presentNewsDetails(in: self, forItemAt: indexPath.row)
     }
 }

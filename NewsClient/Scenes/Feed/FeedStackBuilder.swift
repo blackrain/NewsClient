@@ -24,7 +24,7 @@ final class FeedStackBuilder {
     public static func build(_ context: FeedContext) -> FeedViewController {
         let presenter = FeedPresenter()
         let interactor = FeedInteractor(presenter, api: context.commonContext.api)
-        let router = FeedRouter(context.commonContext)
+        let router = FeedRouter(context.commonContext, dataStore: interactor)
         let viewController = FeedViewController(interactor, router: router)
         presenter.viewController = viewController
 

@@ -13,6 +13,7 @@ struct NewsDTO: Codable {
     let title: String
     let author: String
     let source: Source
+    let content: String
 
     struct Source: Codable {
         let name: String
