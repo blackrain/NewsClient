@@ -16,20 +16,20 @@ protocol FeedBusinessLogic {
 final class FeedInteractor: FeedDataStore {
 
     private let presenter: FeedPresentationLogic
-    private let api: Api
+    private let newsRepository: NewsRepository
 
     var news: [NewsDTO] = []
 
-    init(_ presenter: FeedPresentationLogic, api: Api) {
+    init(_ presenter: FeedPresentationLogic, newsRepository: NewsRepository) {
         self.presenter = presenter
-        self.api = api
+        self.newsRepository = newsRepository
     }
 }
 
 extension FeedInteractor: FeedBusinessLogic {
 
     func fetchFeedItems() {
-        api.fetchNews(onComplete: { (items) in
+        newsRepository.all(onComplete: { (items) in
             self.news = items
             self.presenter.present(items: items)
         }) { (error) in

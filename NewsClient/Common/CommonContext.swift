@@ -9,9 +9,11 @@
 import Foundation
 
 protocol CommonContext {
-    var api: Api { get }
+
+    var newsRepository: NewsRepository { get }
 }
 
 struct DefaultContext: CommonContext {
-    var api: Api = NewsApi()
+
+    var newsRepository: NewsRepository = ApiNewsRepository(newsApi: NewsApi())
 }
