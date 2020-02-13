@@ -29,12 +29,14 @@ final class FeedInteractor: FeedDataStore {
 extension FeedInteractor: FeedBusinessLogic {
 
     func fetchFeedItems() {
-        newsRepository.all(onComplete: { (items) in
-            self.news = items
-            self.presenter.present(items: items)
-        }) { (error) in
-            self.presenter.presentError(error)
+        newsRepository.all { (result) in
+            switch result {
+            case .success(let items):
+                self.news = items
+                self.presenter.present(items: items)
+            case .failure(let error):
+                self.presenter.presentError(error)
+            }
         }
-
     }
 }

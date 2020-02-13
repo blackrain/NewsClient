@@ -15,7 +15,7 @@ enum NewsRepositoryError: Error {
 
 protocol NewsRepository {
 
-    func all(onComplete: @escaping (([NewsDTO]) -> Void), onFailure: @escaping (NewsRepositoryError) -> Void)
+    func all(onComplete: @escaping (Result<[NewsDTO], NewsRepositoryError>) -> Void)
 }
 
 class ApiNewsRepository: NewsRepository {
@@ -26,13 +26,17 @@ class ApiNewsRepository: NewsRepository {
         self.newsApi = newsApi
     }
 
-    func all(onComplete: @escaping (([NewsDTO]) -> Void), onFailure: @escaping (NewsRepositoryError) -> Void) {
-        newsApi.fetchNews(onComplete: { (news) in
-            // Persist news
-            onComplete(news)
-        }) { (error) in
-            // Handle error
-            onFailure(.genericError)
-        }
+    func all(onComplete: @escaping (Result<[NewsDTO], NewsRepositoryError>) -> Void) {
+        newsApi.fetchNews(onComplete: { (result) in
+
+            switch result {
+            case .success(let items):
+                // Persist items
+                onComplete(.success(items))
+            case .failure(_):
+                // Handle error
+                onComplete(.failure(.genericError))
+            }
+        })
     }
 }
